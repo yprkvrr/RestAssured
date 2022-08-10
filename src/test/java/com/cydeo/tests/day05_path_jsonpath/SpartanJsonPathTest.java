@@ -1,14 +1,13 @@
 package com.cydeo.tests.day05_path_jsonpath;
 
-import com.cydeo.utils.SaprtanTestBase;
+import com.cydeo.utils.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.apache.poi.ss.formula.functions.T;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
-public class SpartanJsonPathTest extends SaprtanTestBase {
+public class SpartanJsonPathTest extends SpartanTestBase {
     /**
      * Given accept is json
      * And path param id is 13

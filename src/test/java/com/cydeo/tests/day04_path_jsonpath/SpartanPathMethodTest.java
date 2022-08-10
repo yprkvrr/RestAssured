@@ -1,11 +1,8 @@
 package com.cydeo.tests.day04_path_jsonpath;
 
-import com.cydeo.utils.SaprtanTestBase;
+import com.cydeo.utils.SpartanTestBase;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import com.cydeo.utils.ConfigurationReader;
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeEach;
 import io.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +12,7 @@ import java.util.List;
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SpartanPathMethodTest extends SaprtanTestBase {
+public class SpartanPathMethodTest extends SpartanTestBase {
     /**
      * Given accept is json
      * And path param id is 13

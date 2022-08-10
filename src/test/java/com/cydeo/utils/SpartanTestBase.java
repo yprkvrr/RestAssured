@@ -3,7 +3,7 @@ package com.cydeo.utils;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 
-public abstract class SaprtanTestBase {
+public abstract class SpartanTestBase {
 
     @BeforeAll //@beforeClass in junit4
     public static void setUp() {
