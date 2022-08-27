@@ -1,5 +1,6 @@
 package com.cydeo.tests.practice_tasks;
 
+import com.cydeo.utils.TypiCodeTestBase;
 import io.restassured.http.ContentType;
 
 import io.restassured.path.json.JsonPath;
@@ -12,15 +13,15 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Practice04 {
-    String url = "https://jsonplaceholder.typicode.com/posts";
+public class Practice04 extends TypiCodeTestBase {
+
 
     @Test
     public void verifyContentAndStatus() {
         Response response = given().accept(ContentType.JSON)
-                .when().get(url);
+                .when().get("/posts");
         assertEquals(200, response.statusCode());
-        assertTrue(response.contentType().contains("json"));
+        assertEquals("application/json; charset=utf-8", response.contentType());
     }
 
     /**
@@ -41,7 +42,8 @@ public class Practice04 {
     public void verifyHeaders() {
         Response response = given().accept(ContentType.JSON)
                 .and().pathParam("id", 1)
-                .when().get(url + "/{id}");
+                .when().get("/{id}");
+        response.prettyPrint();
         assertEquals(200, response.statusCode());
         assertTrue(response.asString().contains("repellat provident"));
         assertEquals("application/json; charset=utf-8", response.contentType());
@@ -63,7 +65,7 @@ public class Practice04 {
     public void clientError(){
         Response response = given().accept(ContentType.JSON)
                 .and().pathParam("id",12345)
-                .when().get(url+"/{id}");
+                .when().get("/{id}");
         assertEquals(404,response.statusCode());
         assertTrue(response.asString().contains("{}"));
     }
