@@ -46,6 +46,7 @@ public class SpartanToMapTest extends SpartanTestBase {
 
         assertEquals(10,spartanMap.get("id"));
         assertEquals("Lorenza",spartanMap.get("name"));
+
         assertEquals("Female",spartanMap.get("gender"));
         assertEquals(3312820936l,spartanMap.get("phone"));
     }
